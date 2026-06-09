@@ -13,6 +13,7 @@ class ChunkSender:
 
     @staticmethod
     def split_text(text: str, max_chars: int = 4096) -> List[str]:
+        """Splits long text structures using newline markers into dimensionally compliant packages."""
         if len(text) <= max_length:
             return [text]
     
