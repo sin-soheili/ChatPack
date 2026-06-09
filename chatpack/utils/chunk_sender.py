@@ -14,18 +14,18 @@ class ChunkSender:
     @staticmethod
     def split_text(text: str, max_chars: int = 4096) -> List[str]:
         """Splits long text structures using newline markers into dimensionally compliant packages."""
-        if len(text) <= max_length:
+        if len(text) <= max_chars:
             return [text]
     
         chunks = []
         remaining = text
     
         while remaining:
-            if len(remaining) <= max_length:
+            if len(remaining) <= max_chars:
                 chunks.append(remaining)
                 break
     
-            cut = remaining[:max_length]
+            cut = remaining[:max_chars]
     
             last_newline = cut.rfind('\n')
             if last_newline > 0:
@@ -38,7 +38,7 @@ class ChunkSender:
                     remaining = remaining[last_space + 1:]
                 else:
                     chunk = cut
-                    remaining = remaining[max_length:]
+                    remaining = remaining[max_chars:]
     
             if chunk:
                 chunks.append(chunk)
