@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatpack-ui"
+version = "1.0.3"
+authors = [
+    { name = "Setayesh Soheili", email = "sinsoheili11@gmail.com" }
+]
+description = "An advanced, asynchronous UI component toolkit built on top of Pyrogram for stateful Telegram bots."
+readme = "PYPI_README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "pyrogram>=2.0.0",
+    "tgcrypto>=1.2.0",
+    "python-dotenv>=1.0.0"
+]
+
+[tool.setuptools.packages.find]
+include = ["chatpack*"]
+
+[project.urls]
+"Homepage" = "https://github.com/thenewbiebackpack/chatpack"
+"Bug Tracker" = "https://github.com/thenewbiebackpack/chatpack/issues"
+"Community" = "https://t.me/backpack_dev"
